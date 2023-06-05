@@ -1,5 +1,5 @@
 #TASK 1 PARSOWANIE
-
+sys.stdout.reconfigure()
 import sys
 import yaml
 import xml.etree.ElementTree as TreeEl
