@@ -15,4 +15,16 @@ def parsowanie_arg():
     return plik_pocz, plik_konc
 
 
+#TASK 2 WCZYTYWANIE DANYCH Z PLIKU JSON
+
+def wczytaj_json(plik_pocz):
+    try:
+        with open(plik_pocz, 'r') as plik:
+            dane = json.load(plik)
+            return dane
+    except FileNotFoundError:
+        print("nie znaleziono takiego pliku, przepraszamy")
+    except json.JSONDecodeError:
+        print("nieprawidłowy plik!")
+        sys.exit(1)
 
