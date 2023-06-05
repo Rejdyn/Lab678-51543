@@ -1,10 +1,10 @@
 #TASK 1 PARSOWANIE
-sys.stdout.reconfigure()
+
 import sys
 import yaml
 import xml.etree.ElementTree as TreeEl
 import json
-
+sys.stdout.reconfigure()
 def parsowanie_arg():
     if len(sys.argv) !=3:
         print("program wejścia i wyjścia różnego formatu")
