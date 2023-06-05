@@ -7,7 +7,7 @@ import json
 sys.stdout.reconfigure()
 def parsowanie_arg():
     if len(sys.argv) !=3:
-        print("program wejścia i wyjścia różnego formatu")
+        print("program wejscia i wyjscia roznego formatu")
         sys.exit(1)
 
     plik_pocz = sys.argv[1]
@@ -25,7 +25,7 @@ def wczytaj_json(plik_pocz):
     except FileNotFoundError:
         print("nie znaleziono takiego pliku, przepraszamy")
     except json.JSONDecodeError:
-        print("nieprawidłowy plik!")
+        print("nieprawidlowy plik!")
         sys.exit(1)
 
 
@@ -50,7 +50,7 @@ def wczytaj_yaml(plik_pocz):
     except FileNotFoundError:
         print("nie znaleziono takiego pliku, przepraszamy")
     except yaml.YAMLError:
-        print("nieprawidłowy plik!")
+        print("nieprawidlowy plik!")
         sys.exit(1)
 
 #TASK 5 ZAPISYWANIE DANYCH DO PLIKU YML
@@ -78,7 +78,7 @@ def wczytaj_xml(plik_pocz):
         print("nie znaleziono takiego pliku, przepraszamy")
         sys.exit(1)
     except TreeEl.ParseError:
-        print("nieprawidłowy plik")
+        print("nieprawidlowy plik")
         sys.exit(1)
 
 
@@ -120,7 +120,7 @@ def glowna_funkcja():
     elif plik_konc.endswith('.xml'):
         zapisz_xml(zrodlo, plik_konc)
     else:
-        print("Nieobsługiwany format pliku.")
+        print("Nieobslugiwany format pliku.")
         sys.exit(1)
 
 if __name__ == '__main__':
