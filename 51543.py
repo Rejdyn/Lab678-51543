@@ -40,3 +40,16 @@ def zapisz_json(dane, plik_konc):
         print("niepowodzenie!")
         sys.exit(1)
 
+#TASK 4 WCZYTYWANIE DANYCH Z PLIKU YML
+
+def wczytaj_yaml(plik_pocz):
+    try:
+        with open(plik_pocz, 'r') as plik:
+            dane = yaml.safe_load(plik)
+            return dane
+    except FileNotFoundError:
+        print("nie znaleziono takiego pliku, przepraszamy")
+    except yaml.YAMLError:
+        print("nieprawidłowy plik!")
+        sys.exit(1)
+
