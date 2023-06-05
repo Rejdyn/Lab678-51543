@@ -16,8 +16,8 @@ jobs:
       - name: Checkout kodu
         uses: actions/checkout@v3
       
-      - name: Instalowanie zależności
-        run: installResources.sh
+      - name: Run installresources.sh
+        run: bash https://github.com/Rejdyn/Lab678-51543/blob/task0/installResources.sh
       
       - name: Budowanie pliku exe
         run: python 51543.py
