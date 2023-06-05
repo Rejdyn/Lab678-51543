@@ -83,6 +83,16 @@ def wczytaj_xml(plik_pocz):
 
 
 
+#TASK 7 ZAPIS DANYCH DO PLIKU XML
+
+def zapisz_xml(zrodlo, plik_konc):
+    try:
+        do_drzew = TreeEl.ElementTree(zrodlo)
+        do_drzew.write(plik_konc, encoding='utf-8', xml_declaration=True) #format utf-8 (najpopularniejszy) pozwoli na interoperacyjność pliku i że zostanie on rozpoznany i prawidłowo sformatowany
+        print("plik zapisany jako xml")
+    except:
+        print("niepowodzenie!")
+        sys.exit(1)
 
 
 
