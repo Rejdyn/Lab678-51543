@@ -28,3 +28,15 @@ def wczytaj_json(plik_pocz):
         print("nieprawidłowy plik!")
         sys.exit(1)
 
+
+#TASK 3 ZAPISYWANIE DANYCH DO PLIKU JSON
+
+def zapisz_json(dane, plik_konc):
+    try:
+        with open(plik_konc, 'w') as plik:
+            json.dump(dane, plik, indent=4)
+            print("plik zapisany jako json")
+    except:
+        print("niepowodzenie!")
+        sys.exit(1)
+
