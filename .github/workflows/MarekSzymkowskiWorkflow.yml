@@ -23,7 +23,7 @@ jobs:
         run: python 51543.py
         
       - name: Zapisanie pliku exe
-        run: cp 51543.exe ${{ github.workspace }}/51543.exe
+        run: cp 51543.py ${{ github.workspace }}/51543.exe
         
       - name: Przesyłanie 
         uses: actions/upload-artifact@v3
