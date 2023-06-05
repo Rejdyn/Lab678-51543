@@ -1,0 +1,33 @@
+name: Budowanie pliku exe
+
+on:
+  push:
+    branches:
+      - task0
+  schedule:
+    - cron: "0 10 * * 0" # Uruchamiaj co niedzielę o godzinie 10:00
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+      - name: Checkout kodu
+        uses: actions/checkout@v3
+      
+      - name: Instalowanie zależności
+        run: |
+          ./installresources.sh
+      
+      - name: Budowanie pliku exe
+        run: python 51543.py
+        
+      - name: Zapisanie pliku exe
+        run: cp 51543.exe ${{ github.workspace }}/51543.exe
+        
+      - name: Przesyłanie 
+        uses: actions/upload-artifact@v3
+        with:
+          name: 51543-exe
+          path: ${{ github.workspace }}/51543.exe
