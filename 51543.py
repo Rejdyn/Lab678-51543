@@ -8,7 +8,7 @@ sys.stdout.reconfigure()
 def parsowanie_arg():
     if len(sys.argv) !=3:
         print("program wejscia i wyjscia roznego formatu")
-        sys.exit(1)
+        sys.exit(0)
 
     plik_pocz = sys.argv[1]
     plik_konc = sys.argv[2]
