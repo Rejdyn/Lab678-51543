@@ -66,4 +66,25 @@ def zapisz_yml(dane, plik_konc):
         sys.exit(1)
 
 
+#TASK 6 WCZYTYWANIE DANYCH Z PLIKU XML
+
+
+def wczytaj_xml(plik_pocz):
+    try:
+        do_drzew = TreeEl.parse(plik_pocz)
+        zrodlo = do_drzew.getroot()
+        return zrodlo
+    except FileNotFoundError:
+        print("nie znaleziono takiego pliku, przepraszamy")
+        sys.exit(1)
+    except TreeEl.ParseError:
+        print("nieprawidłowy plik")
+        sys.exit(1)
+
+
+
+
+
+
+
 
