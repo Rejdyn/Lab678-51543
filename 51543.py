@@ -100,37 +100,31 @@ def zapisz_xml(zrodlo, plik_konc):
 
 
 def glowna_funkcja():
-    #task0
-
-    #task1
     plik_pocz, plik_konc = parsowanie_arg()
+    dane = None
 
-#task2 wczytanie danych
     if plik_pocz.endswith('.json'):
         dane = wczytaj_json(plik_pocz)
     elif plik_pocz.endswith('.yml') or plik_pocz.endswith('.yaml'):
         dane = wczytaj_yaml(plik_pocz)
     elif plik_pocz.endswith('.xml'):
         zrodlo = wczytaj_xml(plik_pocz)
-
     else:
-        print("nieobsługiwany foramat pliku")
+        print("Nieobsługiwany format pliku.")
         sys.exit(1)
 
-#task3 zapis tych danych
     if plik_konc.endswith('.json'):
-        dane = zapisz_json(plik_konc)
+        zapisz_json(dane, plik_konc)
     elif plik_konc.endswith('.yml') or plik_konc.endswith('.yaml'):
-        dane = zapisz_yml(plik_konc)
+        zapisz_yaml(dane, plik_konc)
     elif plik_konc.endswith('.xml'):
-        zrodlo = zapisz_xml(plik_konc)
+        zapisz_xml(zrodlo, plik_konc)
     else:
-        print("nieobsługiwany foramt pliku")
+        print("Nieobsługiwany format pliku.")
         sys.exit(1)
 
-if __name__ == '__glowna_funkcja__':
+if __name__ == '__main__':
     glowna_funkcja()
-
 
 
 
